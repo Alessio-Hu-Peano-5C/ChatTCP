@@ -16,14 +16,14 @@ public class ClientTCPChat {
 
     public static void main(String[] args) {
         String ip = "127.0.0.1";
-        int porta = 1234;
+        int porta = 5489;
         try {
             InetAddress address = InetAddress.getByName(ip);
             Socket s = new Socket(address, porta);
-            Listener listener;
+            TCPRicezione ricevi;
             try {
-                listener = new Listener(s);
-                Thread thread = new Thread(listener);
+                ricevi = new TCPRicezione(s);
+                Thread thread = new Thread(ricevi);
                 thread.start();
             } catch (Exception e) {
                 System.out.println("Connessione NON riuscita con server: ");
