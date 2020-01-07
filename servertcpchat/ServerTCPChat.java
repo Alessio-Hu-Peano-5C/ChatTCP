@@ -16,7 +16,7 @@ public class ServerTCPChat {
 
     public static void main(String[] args) {
 
-        int porta = 1234;
+        int porta = 5489;
 
         try {
             ServerSocket server = new ServerSocket(porta);
